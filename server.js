@@ -2,7 +2,10 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => res.send("Hello00"));
+//Define Routes
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/contacts", require("./routes/api/contacts"));
 
 const PORT = process.env.PORT || 5000;
 
